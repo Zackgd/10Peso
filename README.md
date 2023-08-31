@@ -1,7 +1,7 @@
 # El Buen sabor
 - Tematica del Sitio: Delivery de comida rapida 
 
-- Publico objetivo: JOvenes y Adolecentes
+- Publico objetivo: Jovenes y Adolecentes
 
 ### Descripcion
 
