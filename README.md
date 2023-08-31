@@ -1,5 +1,6 @@
 # Des9Soft
-Tematica del Sitio: Pagina Web centrado en el pedido de comida y delivery con un publico objetivo entre 18 y 60 años 
+Tematica del Sitio:Delivery de comida rapida 
+Publico objetivo: Adolecentes y jovenes
 Participantes del Grupo 9:
 -Zacarias Garcia
 -Paula Alvarado
