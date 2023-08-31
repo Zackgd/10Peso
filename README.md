@@ -1,21 +1,25 @@
 # El Buen sabor
-Tematica del Sitio: Delivery de comida rapida 
+- Tematica del Sitio: Delivery de comida rapida 
 
-Publico objetivo: Adolecentes y jovenes
+- Publico objetivo: JOvenes y Adolecentes
 
-Integrantes del Grupo 9:
+### Descripcion
 
--Zacarias Garcia
+El delivery de comida "El buen sabor" ofrece a sus clientes una amplia variedad de comidas y bebidas. El horario de atencion es de lunes a viernes de 12:00 a 20:00 y sabados y domingos de 11:00 a 16:00.Los clientes pueden realizar el pedido de manera remota desde su casa usando cualquier dispositivo o desde el mostrador del local.
 
--Paula Alvarado
+### Integrantes
 
--Brisa Olguin
+- Zacarias Garcia
 
--Gaspar Coria
+- Paula Alvarado
 
--Julian Serralta 
+- Brisa Olguin
 
--Matias Salinas
+- Gaspar Coria
 
--Juan Tomás Saez
+- Julian Serralta 
+
+- Matias Salinas
+
+- Juan Tomás Saez
 
