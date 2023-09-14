@@ -1,0 +1,16 @@
+.navbar-custom{
+    background-color:#ED9121;
+    width: 100%;
+    height: 90px;
+    background: linear-gradient(to bottom, #ED9121, #ffd57e)
+}
+.usu{
+    margin-right: 10px;
+    
+}
+.carrito{
+    margin-left: 10px;
+}
+.lupa{
+    margin-left: 20px;
+}
