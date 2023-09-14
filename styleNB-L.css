@@ -1,6 +1,9 @@
 .navbar-custom{
     background-color:#ED9121;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
     height: 90px;
     background: linear-gradient(to bottom, #ED9121, #ffd57e)
 }
@@ -13,4 +16,21 @@
 }
 .lupa{
     margin-left: 20px;
+}
+.regi{
+    background-color: #ED9121;
+    
+}
+.ISesion{
+    background-color: #ED9121;
+    
+}
+.dropdown{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+
+}
+.dropdown button{
+    margin-left: 30px;
 }
