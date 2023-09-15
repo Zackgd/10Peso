@@ -34,3 +34,42 @@
 .dropdown button{
     margin-left: 30px;
 }
+.Prod{
+    background-color:aqua;
+    width:900px;
+    height:120px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+    border-radius: 16px;
+    display: flex;
+}
+.Prod img{
+    width: 45%;/*la imagen ocupa el 100% del contenedor establecido*/
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-right: 0;
+}
+.contenerdor{
+    margin:0;
+    padding: 0;
+    
+}
+.Texto{
+    width: 66.66%;
+    height: 100%;
+}
+h1{
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 30px;
+}
+.Titulo1{
+    margin-top: 20px;
+    margin-left: 20px;
+    
+
+}
