@@ -6,11 +6,11 @@
     <title>El Buen Sabor</title>
     <!--CSS Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styleNB-L.css">
+    <link rel="stylesheet" href="cssH17.css">
     <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="logonombre.svg" alt="Logo" width="90">
+                <img src="Imagenes/logonombre.svg" alt="Logo" width="90">
             </a>
     
           <link
@@ -55,10 +55,7 @@
 <body>
     <div class="container-fluid">
         <div class="justify-content-center titulofacturacion">
-        <h2 id="titulofacturacion"> FACTURACIÓN </h2>
-        </div>
-        <div>
-          
+        <h2 id="titulofacturacion"> PEDIDOS </h2>
         </div>
         <div class="rectangulomarron">
         <div class="row justify-content-center">
@@ -66,60 +63,54 @@
                 <table class="table table-sm-bordered">
                     <thead class="encabezadotabla">
                         <tr>
-                            <th>NOMBRE CLIENTE</th>
-                            <th>MAIL CLIENTE</th>
                             <th>PEDIDO N°</th>
                             <th>FECHA</th>
                             <th>HORA</th>
                             <th>DESCRIPCIÓN</th>
-                            <th>FACTURA</th>
+                            <th>DETALLE</th>
+                            <th>ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Gaspar Coria</td>
-                            <td>gasparcoria@gmail.com</td>
                             <td>10751</td>
                             <td>03/03/23</td>
                             <td>13:45:09</td>
                             <td>Lorem ipsum dolor...</td>
-                            <td><button type="button" class="btn btn-primary botonef">Emitir factura</button></td>
+                            <td><button class="botonverdet">Ver detalles</button></td>
+                            <td><a class="botonfac" href="#">Marcar listo</a></td>
                         </tr>
                         <tr>
-                            <td>Matías Salinas</td>
-                            <td>matiassalinas@gmail.com</td>
-                            <td>10750</td>
+                        <td>10750</td>
                             <td>03/03/23</td>
                             <td>13:31:40</td>
                             <td>Lorem ipsum dolor...</td>
-                            <td><button type="button" class="btn btn-primary botonef">Emitir factura</button></td>
+                            <td><button class="botonverdet">Ver detalles</button></td>
+                            <td><a class="botonfac" href="#">Marcar listo</a></td>
                         </tr>
                         <tr>
-                            <td>Zacarías García</td>
-                            <td>zacariasgarcia@gmail.com</td>
                             <td>10749</td>
                             <td>03/03/23</td>
                             <td>13:10:57</td>
                             <td>Lorem ipsum dolor...</td>
-                            <td><button type="button" class="btn btn-primary botonef">Emitir factura</button></td>
+                            <td><button class="botonverdet">Ver detalles</button></td>
+                            <td><a class="botonfac" href="#">Marcar listo</a></td>
                         </tr>
                         <tr>
-                            <td>Paula Alvarado</td>
-                            <td>paulaalvarado@gmail.com</td>
                             <td>10748</td>
                             <td>03/03/23</td>
                             <td>13:00:03</td>
                             <td>Lorem ipsum dolor...</td>
-                            <td><button type="button" class="btn btn-primary botonef">Emitir factura</button></td>
+                            <td><button class="botonverdet">Ver detalles</button></td>
+                            <td><a class="botonfac" href="#">Marcar listo</a></td>
                         </tr>
                         <tr>
-                            <td>Brisa Olguín</td>
-                            <td>brimsaolguin@gmail.com</td>
                             <td>10747</td>
                             <td>03/03/23</td>
                             <td>12:58:31</td>
                             <td>Lorem ipsum dolor...</td>
-                            <td><button type="button" class="btn btn-primary botonef">Emitir factura</button></td>
+                            <td><button class="botonverdet">Ver detalles</button></td>
+                            <td><a class="botonfac" href="#">Marcar listo</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -133,7 +124,7 @@
           <figure>
             <a href="#">
               <img
-                src="Footer/img/El Buen Sabor logo sin letras.svg"
+                src="Imagenes/El Buen Sabor logo sin letras.svg"
                 alt="Logo El Buen Sabor"
               />
             </a>
@@ -184,9 +175,12 @@
             <a href="https://www.instagram.com/" target="_blank"><i class="bi bi-instagram"></i></a>
             <a href="https://www.tiktok.com/" target="_blank"><i class="bi bi-tiktok"></i></a>
           </div>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
         </div>
       </footer>
 </footer>
-
 </body>
 </html>
