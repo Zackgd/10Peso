@@ -87,6 +87,10 @@ h1{
     color: #000;
 }
 
+.botonverdet{
+    background-color: #ED9121;
+    border-radius: 10px;
+}
 
 
 footer {
@@ -101,14 +105,23 @@ footer {
     width: 200px;
 }
 
-
-.rectangulomarron{
-    background-color: #EFDECD;
-    border-radius: 5%;
-    height: 360px;
-    z-index: -1;
-    
+.botonfac{
+  color:#ED9121;
 }
+
+.rectangulomarron {
+  background-color: #EFDECD;
+  border-radius: 5px;
+  padding: 5px; 
+  position: relative;
+}
+
+.col-md-10 {
+  overflow: hidden; 
+  position: relative;
+}
+
+
 h2 {
     color: #ed9121;
     text-align: center;

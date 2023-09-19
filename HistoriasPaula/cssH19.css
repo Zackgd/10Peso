@@ -88,7 +88,6 @@ h1{
 }
 
 
-
 footer {
     position: fixed;
     bottom: 0;
@@ -101,14 +100,31 @@ footer {
     width: 200px;
 }
 
-
-.rectangulomarron{
-    background-color: #EFDECD;
-    border-radius: 5%;
-    height: 360px;
-    z-index: -1;
-    
+.botonfac{
+  color:#ED9121;
 }
+
+.rectangulomarron {
+  background-color: #EFDECD;
+  border-radius: 5px;
+  padding: 5px; 
+  position: relative;
+}
+
+.col-md-10 {
+  overflow: hidden; 
+  position: relative;
+}
+
+.facturaemit{
+    color: #FCC7A1;
+}
+
+.cancelar{
+    color:#000
+}
+
+
 h2 {
     color: #ed9121;
     text-align: center;
