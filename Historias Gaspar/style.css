@@ -4,6 +4,7 @@
 footer {
   position: fixed;
   bottom: 0;
+  max-height: 140px;
 }
 
 h2 {
@@ -33,7 +34,7 @@ h2 {
   width: 100%;
   text-align: left;
   font-family: Inter, sans-serif;
-  padding: 40px 40px 40px 40px;
+  padding: 12px 20px 12px;
 }
 
 .footer-distributed .footer-left,
@@ -124,10 +125,75 @@ h2 {
   }
 }
 
-.custom-form {
-  width: 75%; /* Tamaño del formulario al 75% del contenedor padre */
-  background-color: white; /* Fondo blanco */
-  border-radius: 10px; /* Bordes redondeados */
-  margin: 0 auto; /* Centrar horizontalmente */
-  padding: 20px; /* Espacio interior para separar los elementos del borde */
+.nav-tabs {
+  background-color: #FFF5EE !important;
+  border-radius: 10px;
+}
+.nav-tabs .nav-link {
+  color: black !important;
+}
+
+.nav-tabs .nav-link.active {
+  border-color: #ED9121 !important;
+}
+.btn-group{
+  color: white ; /* Color del texto por defecto */
+  background-color:#ED9121; /* Color de fondo por defecto */
+  
+}
+
+.separator {
+  height: 50px; /* Establece la altura del espacio entre el contenido y el footer */
+}
+
+.container mt-5{
+  color: #ED9121;
+}
+
+.navbar.navbar-expand-lg {
+  background-color: #fff5ee;
+  border-bottom: 3px solid #ed9121;
+}
+
+.dropdown-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn.dropdown-toggle {
+  border-color: #ED9121;
+}
+
+.card.mb-3.ml-3.justify-content-center.align-items-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #EFDECD;
+}
+
+.card.text-center{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  background-color: #EFDECD;
+  max-width: 1000px;
+
+}
+
+h6{
+  display: flex;
+  justify-content: left;
+  margin-left: 30px;
+}
+
+.subtitulo{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.btn.btn-primary-exportar{
+  border-color: black;
+  background-color: #ED9121;
 }

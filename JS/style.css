@@ -1,10 +1,48 @@
-body{
-    background-color: #FFF5EE;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.vistaSinLog{
+    width: auto; 
+    min-height:80vh; 
+    background-color: white;
 }
 
+.vistaCliente{
+    width: auto; 
+    min-height: 80vh;; 
+    background-color: white;
+}
+
+.vistaAdmn{
+    width: auto; 
+    min-height: 80vh;; 
+    background-color: white; 
+}
+
+.vistaRecepcion{
+    width: auto; 
+    min-height: 80vh;; 
+    background-color: white; 
+}
+
+.vistaCocina{
+    width: auto; 
+    min-height: 80vh;; 
+    background-color: white; 
+}
+
+.formulario{
+    text-align: center;
+}
+
+.navbar{
+    background-color: lightgoldenrodyellow;
+}
 
 .navbar-custom{
-    background-color:#ED9121;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -12,104 +50,13 @@ body{
     height: 90px;
     background: linear-gradient(to bottom, #ED9121, #ffd57e)
 }
-.usu{
-    margin-right: 10px;
-    
-}
-.carrito{
-    margin-left: 10px;
-}
-.lupa{
-    margin-left: 20px;
-}
-.regi{
-    background-color: #ED9121;
-    
-}
-.ISesion{
-    background-color: #ED9121;
-    
-}
-.dropdown{
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
-
-}
-.dropdown button{
-    margin-left: 30px;
-}
-.Prod{
-    background-color:aqua;
-    width:900px;
-    height:120px;
-    margin-top: 40px;
-    margin-bottom: 25px;
-    margin-left: 20px;
-    border-radius: 16px;
-    display: flex;
-}
-.Prod img{
-    width: 45%;/*la imagen ocupa el 100% del contenedor establecido*/
-    height: auto;
-    margin-left: 10px;
-    margin-top: 10px;
-    border-radius: 10px;
-    margin-right: 0;
-}
-.contenerdor{
-    margin:0;
-    padding: 0;
-    
-}
-.Texto{
-    width: 66.66%;
-    height: 100%;
-}
-h1{
-    font-size: 24px;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-right: 30px;
-}
-.Titulo1{
-    margin-top: 20px;
-    margin-left: 20px;
-    
-}
-
-.container{
-    margin-left: 150px;
-}
-
-.botonef{
-    background-color: #ffd57e;
-    color: #000;
-}
-
-
 
 footer {
     position: fixed;
     bottom: 0;
-    height: 175px;
   }
-
-.encabezadotabla{
-    background-color: #FCC7A1;
-    height:15px;
-    width: 200px;
-}
-
-
-.rectangulomarron{
-    background-color: #EFDECD;
-    border-radius: 5%;
-    height: 360px;
-    z-index: -1;
-    
-}
-h2 {
+  
+  h2 {
     color: #ed9121;
     text-align: center;
     font-family: Inter, sans-serif;
@@ -119,13 +66,6 @@ h2 {
     line-height: normal;
     letter-spacing: 5.44px;
   }
-
-#titulofacturacion{
-    margin-top: 64px;
-    margin-bottom: 8px;
-    font-family: Inter, sans-serif; 
-    color:#000
-}
   
   @media (max-height: 800px) {
     footer {
@@ -137,8 +77,11 @@ h2 {
   }
   
   .footer-distributed {
-    background-color: #fff5ee;
-    border-top: 3px solid #ed9121;
+    display: flex; 
+    justify-content:space-between; 
+    align-items: center; 
+    background-color: lightgoldenrodyellow;
+    
     box-sizing: border-box;
     width: 100%;
     text-align: left;
@@ -233,3 +176,11 @@ h2 {
       margin-left: 0;
     }
   }
+  /* Estilo personalizado para el formulario */
+.custom-form {
+  width: 75%; /* Tamaño del formulario al 75% del contenedor padre */
+  background-color: white; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  margin: 0 auto; /* Centrar horizontalmente */
+  padding: 20px; /* Espacio interior para separar los elementos del borde */
+}
