@@ -23,3 +23,6 @@ El delivery de comida "El buen sabor" ofrece a sus clientes una amplia variedad 
 
 - Juan Tomás Saez
 
+Link Github:https://github.com/Zackgd/10Peso
+Link Tablero Jira: https://zacl.atlassian.net/jira/software/projects/SCRUM/boards/1
+
