@@ -4,14 +4,13 @@ import com.peso.elBuenSabor.enums.EstadoPedido;
 import com.peso.elBuenSabor.enums.FormaPago;
 import com.peso.elBuenSabor.enums.TipoEnvio;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pedido")
@@ -65,4 +64,16 @@ public class Pedido extends Base{
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "factura_id")
+    private Factura factura;
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Pedido_id")
+    private List<DetallePedido> detallePedidos = new ArrayList<>();
+
+    public void agregarDetallePedido(DetallePedido detallePedi){
+        detallePedidos.add(detallePedi);
+    }
 }

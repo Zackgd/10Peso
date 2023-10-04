@@ -2,14 +2,13 @@ package com.peso.elBuenSabor.entities;
 
 import com.peso.elBuenSabor.enums.FormaPago;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "factura")
@@ -56,5 +55,7 @@ public class Factura extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Factura_id")
+    private List<DetalleFactura> detalleFacturas = new ArrayList<>();
 }

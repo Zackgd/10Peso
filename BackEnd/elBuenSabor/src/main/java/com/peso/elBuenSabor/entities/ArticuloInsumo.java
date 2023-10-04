@@ -1,14 +1,13 @@
 package com.peso.elBuenSabor.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "articulo_insumo")
@@ -49,4 +48,15 @@ public class ArticuloInsumo extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetallePedido> detallePedidos = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetalleFactura> detalleFacturas = new ArrayList<>();
 }

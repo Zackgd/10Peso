@@ -1,8 +1,6 @@
 package com.peso.elBuenSabor.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,4 +28,7 @@ public class DetallePedido extends Base{
     @Column(name = "subtotal_costo", precision = 10, scale = 2)
     private BigDecimal subtotalCosto;
 
+    @ManyToOne()
+    @JoinColumn(name = "articuloManufacturado_id")
+    private ArticuloManufacturado articuloManufacturado;
 }

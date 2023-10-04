@@ -1,12 +1,11 @@
 package com.peso.elBuenSabor.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "cliente")
@@ -29,5 +28,43 @@ public class Cliente extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
+    @OneToOne
+    @JoinColumn(name = "id_usuario")
+    private Usuario usuario;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "cliente_id")
+    private List<Pedido> pedidos = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "cliente_id")
+    private List<Domicilio> domicilios = new ArrayList<>();
+
+    public void agregarDomicilio(Domicilio domi) {
+        domicilios.add(domi);
+    }
+
+    public void agregarPedido(Pedido pedi) {
+        pedidos.add(pedi);
+    }
+
+    public void mostrarDomicilios() {
+        System.out.println("- Domicilios de " + nombre + " " + apellido + ": ");
+        for (Domicilio domicilio : domicilios) {
+            System.out.println("- Localidad: " + domicilio.getLocalidad() + ", calle: " + domicilio.getCalle() + ", numero: " + domicilio.getNumero());
+        }
+    }
+
+    public void mostrarPedidos() {
+        System.out.println("- Pedidos de " + nombre + " " + apellido + ": ");
+        for (Pedido pedido: pedidos) {
+            System.out.println("- Fecha: " + pedido.getFechaPedido() + ", Total: " + pedido.getTotal());
+            int contador = 0;
+            for (DetallePedido detalle: pedido.getDetallePedidos()) {
+                contador += 1;
+                System.out.println("- Producto " + contador + ": " + detalle.getArticuloManufacturado().getDenominacion()
+                        + ", cantidad: " + detalle.getCantidad() + ", subtotal: " + detalle.getSubtotal());
+            }
+        }
+    }
 }
