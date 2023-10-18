@@ -6,7 +6,11 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+<<<<<<< HEAD
 
+=======
+import java.util.ArrayList;
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +27,7 @@ public class Factura extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFacturacion;
 
+<<<<<<< HEAD
    // @Column(name = "mp_payment_id")
    // private Long mpPaymentId;
 
@@ -41,6 +46,23 @@ public class Factura extends Base{
    @OneToOne
    @JoinColumn(name = "id_mp_datos")
    private MPDatos mpDatos;
+=======
+    @Column(name = "mp_payment_id")
+    private Long mpPaymentId;
+
+    @Column(name = "mp_merchant_order_id")
+    private Long mpMerchantOrderId;
+
+    @Column(name = "mp_preference_id")
+    private String mpPreferenceId;
+
+    @Column(name = "mp_payment_type")
+    private String mpPaymentType;
+
+    @NotNull
+    private FormaPago formaPago;
+
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
     @NotNull
     @Column(name = "total_venta", precision = 10, scale = 2)
     private BigDecimal totalVenta;
@@ -58,4 +80,10 @@ public class Factura extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
+<<<<<<< HEAD
+=======
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Factura_id")
+    private List<DetalleFactura> detalleFacturas = new ArrayList<>();
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }

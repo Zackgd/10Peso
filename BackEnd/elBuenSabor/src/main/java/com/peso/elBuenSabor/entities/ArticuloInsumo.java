@@ -5,12 +5,20 @@ import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
 import java.math.BigDecimal;
+<<<<<<< HEAD
 
 import java.util.Date;
 
 
 @Entity
 @Data
+=======
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Entity
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 @Table(name = "articulo_insumo")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -49,6 +57,7 @@ public class ArticuloInsumo extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
+<<<<<<< HEAD
     //agregue esto
     @NotNull
     @ManyToOne()
@@ -71,4 +80,17 @@ public class ArticuloInsumo extends Base{
     //@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     //@JoinColumn(name = "ArticuloInsumo_id")
     //private List<DetalleFactura> detalleFacturas = new ArrayList<>();
+=======
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetallePedido> detallePedidos = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "ArticuloInsumo_id")
+    private List<DetalleFactura> detalleFacturas = new ArrayList<>();
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }

@@ -18,7 +18,11 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Setter
+<<<<<<< HEAD
 public class Pedido extends Base {
+=======
+public class Pedido extends Base{
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 
     @NotNull
     @Column(name = "fecha_pedido")
@@ -69,6 +73,7 @@ public class Pedido extends Base {
     @JoinColumn(name = "factura_id")
     private Factura factura;
 
+<<<<<<< HEAD
     // agregue esto
     @ManyToOne()
     @JoinColumn(name = "id_domicilio_entrega")
@@ -78,4 +83,13 @@ public class Pedido extends Base {
     @ManyToOne()
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
+=======
+    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "Pedido_id")
+    private List<DetallePedido> detallePedidos = new ArrayList<>();
+
+    public void agregarDetallePedido(DetallePedido detallePedi){
+        detallePedidos.add(detallePedi);
+    }
+>>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }
