@@ -10,11 +10,6 @@ public class ElBuenSaborApplication {
 		SpringApplication.run(ElBuenSaborApplication.class, args);
 		System.out.println("--- FUNCIONANDO ---");
 
-<<<<<<< HEAD
-
-=======
-		// Crear instancia de Rubro
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 	}
 
 

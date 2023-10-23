@@ -52,15 +52,6 @@ public class ArticuloManufacturado extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-<<<<<<< HEAD
-   // @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    //@JoinColumn(name = "ArticuloManufacturado_id")
-    //private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
-
-    //@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    //@JoinColumn(name = "ArticuloManufacturado_id")
-    //private List<DetalleFactura> detalleFacturas = new ArrayList<>();
-=======
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "ArticuloManufacturado_id")
     private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
@@ -68,5 +59,4 @@ public class ArticuloManufacturado extends Base{
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "ArticuloManufacturado_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }

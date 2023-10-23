@@ -50,13 +50,9 @@ public class Domicilio extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-<<<<<<< HEAD
-    //@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    //@JoinColumn(name = "domicilio_id")
-    //private List<Pedido> pedidos = new ArrayList<>();
-=======
+    // manytoone a cliente??
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "domicilio_id")
     private List<Pedido> pedidos = new ArrayList<>();
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }

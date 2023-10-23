@@ -37,10 +37,7 @@ public class UnidadMedida extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-<<<<<<< HEAD
-=======
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "UnidadMedida_id")
     private List<ArticuloInsumo> articuloInsumos = new ArrayList<>();
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 }

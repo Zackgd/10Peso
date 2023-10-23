@@ -1,19 +1,10 @@
 package com.peso.elBuenSabor.entities;
 
-<<<<<<< HEAD
-
-=======
-import ch.qos.logback.core.BasicStatusManager;
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
-<<<<<<< HEAD
-
-=======
 import java.util.ArrayList;
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 import java.util.Date;
 import java.util.List;
 
@@ -21,13 +12,9 @@ import java.util.List;
 @Table(name = "rubro_articulo")
 @NoArgsConstructor
 @AllArgsConstructor
-<<<<<<< HEAD
-@Data
 @Builder
-=======
 @Getter
 @Setter
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 public class RubroArticulo extends Base{
 
     @NotNull
@@ -46,25 +33,21 @@ public class RubroArticulo extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-<<<<<<< HEAD
-=======
+
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "RubroArticulo_id")
     private List<ArticuloInsumo> articuloInsumos = new ArrayList<>();
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "RubroArticulo_id")
     private List<ArticuloManufacturado> articuloManufacturados = new ArrayList<>();
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 
     @ManyToOne()
     @JoinColumn(name = "id_rubro_padre")
     private RubroArticulo rubroPadre;
-<<<<<<< HEAD
+
 // agregue esto
     @OneToMany(mappedBy = "rubroPadre")
     private List<RubroArticulo> subRubros;
-
-=======
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "ArticuloManufacturado_id")
@@ -73,7 +56,6 @@ public class RubroArticulo extends Base{
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "ArticuloManufacturado_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
 
     public RubroArticulo(String denominacion, RubroArticulo rubroPadre) {
         this.denominacion = denominacion;
@@ -81,12 +63,8 @@ public class RubroArticulo extends Base{
     }
 
     public void setSubRubros(List<RubroArticulo> subRubros) {
-<<<<<<< HEAD
         this.subRubros.clear();
         this.subRubros.addAll(subRubros);
-=======
-        this.setSubRubros().clear();
-        this.setSubRubros().addAll(subRubros);
     }
 
     public void agregarArticuloInsumo(ArticuloInsumo articuloInsumo) {
@@ -96,9 +74,6 @@ public class RubroArticulo extends Base{
     public void agregarArticuloManufacturado(ArticuloManufacturado articuloManufacturado) {
         articuloManufacturados.add(articuloManufacturado);
     }
-    // Faltaria:
-
-
 
     public void mostrarArticuloInsumo() {
         System.out.println("Los articulos Insumo de este rubro son: ");
@@ -120,7 +95,6 @@ public class RubroArticulo extends Base{
                     + ", Fecha Alta: " + articuloManufacturado.getFechaAlta() + ", Fecha Baja: " + articuloManufacturado.getFechaBaja()
                     + ", Tipo: " + articuloManufacturado.getUrlImagen());
         }
->>>>>>> a55d6106025a893e5069729f97cc51353050d032
     }
 
 }
