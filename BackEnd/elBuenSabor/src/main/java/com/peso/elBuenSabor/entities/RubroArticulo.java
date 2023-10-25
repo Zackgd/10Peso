@@ -12,7 +12,6 @@ import java.util.List;
 @Table(name = "rubro_articulo")
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
 public class RubroArticulo extends Base{

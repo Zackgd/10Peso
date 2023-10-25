@@ -12,8 +12,8 @@ import java.util.Date;
 @Table(name = "mp_datos")
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
+@Getter
+@Setter
 public class MPDatos extends Base {
     @Column(name = "mp_payment_id")
     private Long mpPaymentId;

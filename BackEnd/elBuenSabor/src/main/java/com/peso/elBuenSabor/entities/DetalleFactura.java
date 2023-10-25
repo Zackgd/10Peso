@@ -19,9 +19,6 @@ import java.math.BigDecimal;
 @Table(name = "detalle_factura")
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Builder
-
 @Getter
 @Setter
 public class DetalleFactura extends Base{

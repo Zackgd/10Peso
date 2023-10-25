@@ -18,7 +18,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Getter
 @Setter
-@Builder
 public class DetallePedido extends Base{
 
     @NotNull

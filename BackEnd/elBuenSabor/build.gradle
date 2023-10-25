@@ -37,3 +37,9 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+jar {
+	manifest {
+		attributes 'ElBuenSaborApplication': 'com.peso.elBuenSabor'
+	}
+}
