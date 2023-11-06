@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/facturas")
-public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl> {
+public abstract class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl> {
 
 }

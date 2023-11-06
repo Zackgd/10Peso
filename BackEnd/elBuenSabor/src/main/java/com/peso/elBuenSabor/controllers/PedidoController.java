@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/clientes")
-public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceImpl> {
+public abstract class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceImpl> {
 
 }
