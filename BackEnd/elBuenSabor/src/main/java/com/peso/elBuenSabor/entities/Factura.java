@@ -23,10 +23,6 @@ public class Factura extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaFacturacion;
 
-   @OneToOne
-   @JoinColumn(name = "id_mp_datos")
-   private MPDatos mpDatos;
-
     @Column(name = "mp_payment_id")
     private Long mpPaymentId;
 
@@ -43,8 +39,8 @@ public class Factura extends Base{
     private FormaPago formaPago;
 
     @NotNull
-    @Column(name = "total_venta", precision = 10, scale = 2)
-    private BigDecimal totalVenta;
+    @Column(name = "total_venta")
+    private double totalVenta;
 
     @NotNull
     @Column(name = "fecha_alta")
@@ -60,6 +56,7 @@ public class Factura extends Base{
     private Date fechaBaja;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "factura_id")
+    @JoinColumn(name = "Factura_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
+
 }
