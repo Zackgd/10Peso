@@ -62,4 +62,8 @@ public class ArticuloManufacturado extends Base{
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "articulo_manufacturado_id")
     private List<DetallePedido> detallePedidos = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    @JoinColumn(name = "articulo_manufacturado_id")
+    private List<ArticuloInsumo> articulosInsumos = new ArrayList<>();
 }

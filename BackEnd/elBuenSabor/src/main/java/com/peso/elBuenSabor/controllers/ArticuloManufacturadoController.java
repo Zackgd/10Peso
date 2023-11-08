@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "elbuensabor/v1/articulosManufacturados")
+@RequestMapping(path = "elbuensabor/v1/articulosmanufacturados")
 public class ArticuloManufacturadoController extends BaseControllerImpl<ArticuloManufacturado, ArticuloManufacturadoServiceImpl> {
 
     @GetMapping("/denominacion")
@@ -23,7 +23,7 @@ public class ArticuloManufacturadoController extends BaseControllerImpl<Articulo
         }
     }
 
-    @GetMapping("/denominacion")
+    @GetMapping("/precioMayor")
     public ResponseEntity<?> findArticulosConPrecioMayorQue(@RequestParam BigDecimal precio) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(servicio.findArticulosConPrecioMayorQue(precio));
