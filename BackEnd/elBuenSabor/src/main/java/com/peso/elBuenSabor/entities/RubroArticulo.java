@@ -34,11 +34,12 @@ public class RubroArticulo extends Base{
 
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "RubroArticulo_id")
-    private List<ArticuloInsumo> articuloInsumos = new ArrayList<>();
+    @JoinColumn(name = "rubro_articulo_id")
+    private List<ArticuloInsumo> articulosInsumos = new ArrayList<>();
+
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "RubroArticulo_id")
-    private List<ArticuloManufacturado> articuloManufacturados = new ArrayList<>();
+    @JoinColumn(name = "rubro_articulo_id")
+    private List<ArticuloManufacturado> articulosManufacturados = new ArrayList<>();
 
     @ManyToOne()
     @JoinColumn(name = "id_rubro_padre")
@@ -48,14 +49,6 @@ public class RubroArticulo extends Base{
     @OneToMany(mappedBy = "rubroPadre")
     private List<RubroArticulo> subRubros;
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ArticuloManufacturado_id")
-    private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ArticuloManufacturado_id")
-    private List<DetalleFactura> detalleFacturas = new ArrayList<>();
-
     public RubroArticulo(String denominacion, RubroArticulo rubroPadre) {
         this.denominacion = denominacion;
         this.rubroPadre = rubroPadre;
@@ -64,36 +57,6 @@ public class RubroArticulo extends Base{
     public void setSubRubros(List<RubroArticulo> subRubros) {
         this.subRubros.clear();
         this.subRubros.addAll(subRubros);
-    }
-
-    public void agregarArticuloInsumo(ArticuloInsumo articuloInsumo) {
-        articuloInsumos.add(articuloInsumo);
-    }
-
-    public void agregarArticuloManufacturado(ArticuloManufacturado articuloManufacturado) {
-        articuloManufacturados.add(articuloManufacturado);
-    }
-
-    public void mostrarArticuloInsumo() {
-        System.out.println("Los articulos Insumo de este rubro son: ");
-        for (ArticuloInsumo articuloInsumo : articuloInsumos) {
-            System.out.println("Denominacion: " + articuloInsumo.getDenominacion() + ", Modificacion: " + articuloInsumo.getFechaModificacion()
-                    +  ", Precio Compra: " + articuloInsumo.getPrecioCompra()
-                     + ", Stock Actual: " + articuloInsumo.getStockActual()
-                    + ", Fecha Alta: " + articuloInsumo.getFechaAlta() + ", Fecha Baja: " + articuloInsumo.getFechaBaja()
-                    + ", Tipo: " + articuloInsumo.getUrlImagen());
-        }
-    }
-
-    public void mostrarArticuloManufacturado() {
-        System.out.println("Los articulos Manufacturados de este rubro son: ");
-        for (ArticuloManufacturado articuloManufacturado : articuloManufacturados) {
-            System.out.println("Denominacion: " + articuloManufacturado.getDenominacion() + ", Modificacion: " + articuloManufacturado.getFechaModificacion()
-                    +  ", Tiempo Estimado: " + articuloManufacturado.getTiempoEstimadoCocina()
-                    + ", Costo : " + articuloManufacturado.getCosto()
-                    + ", Fecha Alta: " + articuloManufacturado.getFechaAlta() + ", Fecha Baja: " + articuloManufacturado.getFechaBaja()
-                    + ", Tipo: " + articuloManufacturado.getUrlImagen());
-        }
     }
 
 }

@@ -35,7 +35,7 @@ public class ClienteServiceImpl extends BaseServiceImpl<Cliente, Long> implement
 
             return clientes;
 
-        }catch (Exception e){
+        } catch (Exception e){
             throw new Exception(e.getMessage());
         }
     }

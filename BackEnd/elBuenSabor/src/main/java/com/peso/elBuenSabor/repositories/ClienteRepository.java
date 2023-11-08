@@ -13,7 +13,7 @@ import java.util.List;
 
 @Repository
 public interface ClienteRepository extends BaseRepository<Cliente, Long> {
-    //Anotacion Hetodo de Query
+
     List<Cliente> findByNombreContainingOrApellidoContaining(String nombre, String apellido);
     Page<Cliente> findByNombreContainingOrApellidoContaining(String nombre, String apellido , Pageable pageable);
 
@@ -36,6 +36,5 @@ public interface ClienteRepository extends BaseRepository<Cliente, Long> {
     static Page<Cliente> searchNativo(@Param("filtro") String filtro, Pageable pageable) {
         return null;
     }
-
 
 }

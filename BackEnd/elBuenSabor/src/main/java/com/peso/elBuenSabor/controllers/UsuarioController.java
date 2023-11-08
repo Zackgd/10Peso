@@ -12,5 +12,24 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path = "elbuensabor/v1/usuarios")
 public abstract class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServiceImpl> {
 
+    @GetMapping("/findByUsername")
+    public ResponseEntity<?> findByUsername(@RequestParam String username) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.findByUsername(username));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
+
+    @GetMapping("/findByUsernameJPQL")
+    public ResponseEntity<?> findByUsernameJPQL(@RequestParam String username) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(servicio.findByUsername(username));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\"Error, por favor intente mas tarde\"}");
+        }
+    }
+
+
 }
 

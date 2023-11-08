@@ -38,6 +38,6 @@ public class UnidadMedida extends Base{
     private Date fechaBaja;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "UnidadMedida_id")
-    private List<ArticuloInsumo> articuloInsumos = new ArrayList<>();
+    @JoinColumn(name = "unidad_medida_id")
+    private List<ArticuloInsumo> articulosInsumos = new ArrayList<>();
 }

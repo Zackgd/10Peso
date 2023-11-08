@@ -69,21 +69,24 @@ public class Pedido extends Base {
     @JoinColumn(name = "factura_id")
     private Factura factura;
 
-    @ManyToOne()
-    @JoinColumn(name = "id_domicilio_entrega")
-    private Domicilio domicilioEntrega;
-
-    @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "id_cliente")
+    @ManyToOne
     private Cliente cliente;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Pedido_id")
+    @JoinColumn(name = "pedido_id")
     private List<DetallePedido> detallePedidos = new ArrayList<>();
 
-    public void agregarDetallePedido(DetallePedido detallePedi) {
-        detallePedidos.add(detallePedi);
+    public void agregarDetalle(DetallePedido detallePedido){
+
+        detallePedidos.add(detallePedido);
+    }
+
+    public void mostrarDetalles(){
+        int contador = 0;
+        for (DetallePedido detallePedido: detallePedidos){
+            System.out.println("Línea numero: " + contador + ", Producto" + detallePedido.getArticuloManufacturado().getDenominacion() + ", cantidad pedida: " + detallePedido.getCantidad() + ", subtotal: " + detallePedido.getSubtotal());
+            contador = contador + 1;
+        }
     }
 
 }

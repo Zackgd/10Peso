@@ -48,26 +48,16 @@ public class ArticuloInsumo extends Base{
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
 
-    @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "id_unidad_medida")
-    private UnidadMedida unidadMedida;
-
-    @NotNull
-    @ManyToOne()
-    @JoinColumn(name = "id_rubro_articulo")
-    private RubroArticulo rubroArticulo;
-
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "ArticuloInsumo_id")
     private List<DetallePedido> detallePedidos = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ArticuloInsumo_id")
+    @JoinColumn(name = "articulo_insumo_id")
     private List<DetalleArticuloManufacturado> detalleArticuloManufacturados = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "ArticuloInsumo_id")
+    @JoinColumn(name = "articulo_insumo_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
 
 }

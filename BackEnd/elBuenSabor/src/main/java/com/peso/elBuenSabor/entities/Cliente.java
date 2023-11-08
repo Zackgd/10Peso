@@ -36,7 +36,7 @@ public class Cliente extends Base{
     private Date fechaBaja;
 
     @OneToOne
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
@@ -47,31 +47,4 @@ public class Cliente extends Base{
     @JoinColumn(name = "cliente_id")
     private List<Domicilio> domicilios = new ArrayList<>();
 
-    public void agregarDomicilio(Domicilio domi) {
-        domicilios.add(domi);
-    }
-
-    public void agregarPedido(Pedido pedi) {
-        pedidos.add(pedi);
-    }
-
-    public void mostrarDomicilios() {
-        System.out.println("- Domicilios de " + nombre + " " + apellido + ": ");
-        for (Domicilio domicilio : domicilios) {
-            System.out.println("- Localidad: " + domicilio.getLocalidad() + ", calle: " + domicilio.getCalle() + ", numero: " + domicilio.getNumero());
-        }
-    }
-
-    public void mostrarPedidos() {
-        System.out.println("- Pedidos de " + nombre + " " + apellido + ": ");
-        for (Pedido pedido: pedidos) {
-            System.out.println("- Fecha: " + pedido.getFechaPedido() + ", Total: " + pedido.getTotal());
-            int contador = 0;
-            for (DetallePedido detalle: pedido.getDetallePedidos()) {
-                contador += 1;
-                System.out.println("- Producto " + contador + ": " + detalle.getArticuloManufacturado().getDenominacion()
-                        + ", cantidad: " + detalle.getCantidad() + ", subtotal: " + detalle.getSubtotal());
-            }
-        }
-    }
 }

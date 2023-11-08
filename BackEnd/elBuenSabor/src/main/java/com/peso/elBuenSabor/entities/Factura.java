@@ -60,6 +60,6 @@ public class Factura extends Base{
     private Date fechaBaja;
 
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "Factura_id")
+    @JoinColumn(name = "factura_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
 }
