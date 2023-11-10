@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.awt.print.Pageable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,7 +19,7 @@ import java.util.Map;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/facturas")
-public abstract class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl> {
+public class FacturaController extends BaseControllerImpl<Factura, FacturaServiceImpl> {
     @Autowired
     private FacturaService facturaService;
 
@@ -65,4 +66,10 @@ public abstract class FacturaController extends BaseControllerImpl<Factura, Fact
 
         return informe;
     }
+
+    @Override
+    public ResponseEntity<?> getAll(Pageable pageable) {
+        return null;
+    }
+
 }

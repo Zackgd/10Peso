@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PedidoService extends BaseService<Pedido, Long> {
 
-    List<Pedido> findBycliente_id(Long cliente_id) throws Exception;
+    List<Pedido> findPedidosBycliente_id(Long cliente_id);
 
 
 }

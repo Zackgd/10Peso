@@ -17,14 +17,9 @@ public class PedidoServiceImpl extends BaseServiceImpl<Pedido, Long> implements 
     public PedidoServiceImpl(BaseRepository<Pedido, Long> baseRepository) {
         super(baseRepository);
     }
-
     @Override
-    public List<Pedido> findBycliente_id(Long cliente_id) throws Exception {
-        try {
-            List<Pedido> pedidos = pedidoRepository.findBycliente_id(cliente_id);
-            return pedidos;
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
-        }
+    public List<Pedido> findPedidosBycliente_id(Long cliente_id){
+        return pedidoRepository.findBycliente_id(cliente_id);
     }
+
 }
