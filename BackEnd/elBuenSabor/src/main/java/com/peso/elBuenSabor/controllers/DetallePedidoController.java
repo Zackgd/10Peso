@@ -1,7 +1,7 @@
 package com.peso.elBuenSabor.controllers;
 
-import com.peso.elBuenSabor.entities.RubroArticulo;
-import com.peso.elBuenSabor.services.RubroArticuloServiceImpl;
+import com.peso.elBuenSabor.entities.DetallePedido;
+import com.peso.elBuenSabor.services.DetallePedidoServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,9 +11,8 @@ import java.awt.print.Pageable;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "elbuensabor/v1/rubroarticulos")
-public class RubroArticuloController extends BaseControllerImpl<RubroArticulo, RubroArticuloServiceImpl> {
-
+@RequestMapping(path = "elbuensabor/v1/detallepedidos")
+public class DetallePedidoController extends BaseControllerImpl<DetallePedido, DetallePedidoServiceImpl> {
     @Override
     public ResponseEntity<?> getAll(Pageable pageable) {
         return null;

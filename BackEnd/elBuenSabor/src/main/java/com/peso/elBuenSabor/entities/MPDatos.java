@@ -39,4 +39,9 @@ public class MPDatos extends Base {
     @Column(name = "fecha_baja")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaBaja;
+
+//    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+//    @JoinColumn(name = "pedido_id")
+//    private Pedido pedido;
+
 }

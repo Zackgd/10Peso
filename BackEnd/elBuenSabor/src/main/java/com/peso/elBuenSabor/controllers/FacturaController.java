@@ -28,7 +28,7 @@ public class FacturaController extends BaseControllerImpl<Factura, FacturaServic
         Date fechaInicioDate = parsearFecha(fechaInicio);
         Date fechaFinDate = parsearFecha(fechaFin);
 
-        List<Factura> facturas = facturaService.obtenerFacturasEnRangoDeFechas(fechaInicioDate, fechaFinDate);
+        List<Factura> facturas = facturaService.findFacturasByFechaBetween(fechaInicioDate, fechaFinDate);
         Map<String, Double> informe = calcularInformeMonetario(facturas);
 
         return new ResponseEntity<>(informe, HttpStatus.OK);

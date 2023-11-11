@@ -23,9 +23,10 @@ public class DetallePedido extends Base{
     @NotNull
     private Integer cantidad;
 
+    @Transient
     @NotNull
     @Column(name = "subtotal", precision = 10, scale = 2)
-    private BigDecimal subtotal;
+    private Double subtotal;
 
     @NotNull
     @Column(name = "subtotal_costo", precision = 10, scale = 2)
@@ -33,5 +34,14 @@ public class DetallePedido extends Base{
 
     @ManyToOne
     private ArticuloManufacturado articuloManufacturado;
+
+    @Transient
+    public Double getSubtotal() {
+        if(this.articuloManufacturado.getPrecioVenta() != null && this.cantidad != null) {
+            return this.cantidad * this.articuloManufacturado.getPrecioVenta();
+        }else {
+            return 0.0;
+        }
+    }
 
 }

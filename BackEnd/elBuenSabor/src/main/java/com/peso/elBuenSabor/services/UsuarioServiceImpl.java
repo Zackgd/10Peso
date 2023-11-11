@@ -4,12 +4,7 @@ import com.peso.elBuenSabor.entities.Usuario;
 import com.peso.elBuenSabor.repositories.BaseRepository;
 import com.peso.elBuenSabor.repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.Date;
-import java.util.List;
 
 @Service
 public class UsuarioServiceImpl extends BaseServiceImpl<Usuario, Long> implements UsuarioService {

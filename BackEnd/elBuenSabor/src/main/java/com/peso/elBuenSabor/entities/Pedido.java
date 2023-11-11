@@ -30,6 +30,7 @@ public class Pedido extends Base {
     @Temporal(TemporalType.TIMESTAMP)
     private Date horaEstimadaFinalizacion;
 
+    @Transient
     @NotNull
     @Column(name = "total", precision = 10, scale = 2)
     private BigDecimal total;
@@ -69,6 +70,10 @@ public class Pedido extends Base {
     @JoinColumn(name = "factura_id")
     private Factura factura;
 
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "mpDatos_id")
+    private MPDatos mpDatos;
+
     @ManyToOne
     private Cliente cliente;
 
@@ -87,6 +92,14 @@ public class Pedido extends Base {
             System.out.println("Línea numero: " + contador + ", Producto" + detallePedido.getArticuloManufacturado().getDenominacion() + ", cantidad pedida: " + detallePedido.getCantidad() + ", subtotal: " + detallePedido.getSubtotal());
             contador = contador + 1;
         }
+    }
+
+    public Double getTotal() {
+        Double total = 0.0;
+        for (DetallePedido detallePedido : detallePedidos) {
+            total += detallePedido.getSubtotal();
+        }
+        return total;
     }
 
 }

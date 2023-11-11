@@ -30,7 +30,7 @@ public class ArticuloManufacturado extends Base{
 
     @NotNull
     @Column(name = "precio_venta", precision = 10, scale = 2)
-    private BigDecimal precioVenta;
+    private Double precioVenta;
 
     @Column(name = "costo", precision = 10, scale = 2)
     private BigDecimal costo;

@@ -33,7 +33,7 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
     public ResponseEntity<?> getAll(Pageable pageable) {
         return null;
     }
-    }
+}
 
 
 

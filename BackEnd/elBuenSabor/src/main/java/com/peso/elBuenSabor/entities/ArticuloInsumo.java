@@ -36,6 +36,10 @@ public class ArticuloInsumo extends Base{
     private BigDecimal stockMinimo;
 
     @NotNull
+    @Column(name = "unidad_medida")
+    private String unidadMedida;
+
+    @NotNull
     @Column(name = "fecha_alta")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaAlta;

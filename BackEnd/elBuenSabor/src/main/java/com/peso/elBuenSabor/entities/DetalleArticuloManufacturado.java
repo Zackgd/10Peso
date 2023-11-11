@@ -24,4 +24,7 @@ public class DetalleArticuloManufacturado extends Base{
     @Column(name = "cantidad", precision = 10, scale = 2)
     private BigDecimal cantidad;
 
+    @NotNull
+    @Column(name = "unidad_medida")
+    private String unidadMedida;
 }

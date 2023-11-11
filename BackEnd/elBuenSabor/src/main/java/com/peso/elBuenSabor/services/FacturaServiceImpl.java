@@ -20,7 +20,8 @@ public class FacturaServiceImpl extends BaseServiceImpl<Factura, Long> implement
     }
 
     @Override
-    public List<Factura> obtenerFacturasEnRangoDeFechas(Date fechaInicio, Date fechaFin) {
-        return null;
+    public List<Factura> findFacturasByFechaBetween(Date fechaInicio, Date fechaFin) {
+        List<Factura> facturas = facturaRepository.findFacturasByFechaBetween(fechaInicio, fechaFin);
+        return facturas;
     }
 }
