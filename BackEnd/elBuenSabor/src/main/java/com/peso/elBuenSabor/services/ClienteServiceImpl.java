@@ -1,7 +1,6 @@
 package com.peso.elBuenSabor.services;
 
 import com.peso.elBuenSabor.entities.Cliente;
-import com.peso.elBuenSabor.entities.Usuario;
 import com.peso.elBuenSabor.repositories.BaseRepository;
 import com.peso.elBuenSabor.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;

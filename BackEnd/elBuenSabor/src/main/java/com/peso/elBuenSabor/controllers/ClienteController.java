@@ -30,8 +30,4 @@ public class ClienteController extends BaseControllerImpl<Cliente, ClienteServic
         }
     }
 
-    @Override
-    public ResponseEntity<?> getAll(java.awt.print.Pageable pageable) {
-        return null;
-    }
 }

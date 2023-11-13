@@ -1,5 +1,6 @@
 package com.peso.elBuenSabor.controllers;
 
+import com.peso.elBuenSabor.DTOs.RankingProductoYProdDto;
 import com.peso.elBuenSabor.entities.ArticuloManufacturado;
 import com.peso.elBuenSabor.services.ArticuloManufacturadoServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -8,11 +9,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Pageable;
 import java.math.BigDecimal;
+import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/articulosmanufacturados")
 public class ArticuloManufacturadoController extends BaseControllerImpl<ArticuloManufacturado, ArticuloManufacturadoServiceImpl> {
+
 
     @GetMapping("/denominacion")
     public ResponseEntity<?> findByDenominacion(@RequestParam String denominacion) {
@@ -32,8 +35,14 @@ public class ArticuloManufacturadoController extends BaseControllerImpl<Articulo
         }
     }
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
+
+    @GetMapping("/ranking")
+    public ResponseEntity<?> getTopSellingProducts() {
+        try {
+            List<RankingProductoYProdDto> topSellingProducts = servicio.findTopSellingProducts();
+            return ResponseEntity.ok(topSellingProducts);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\"Error, por favor, intente mas tarde\"}");
+        }
     }
 }

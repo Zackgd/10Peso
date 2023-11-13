@@ -17,6 +17,8 @@ import java.util.List;
 @Setter
 public class ArticuloManufacturado extends Base{
 
+
+    private String nombre;
     @NotNull
     private String denominacion;
 
@@ -58,10 +60,6 @@ public class ArticuloManufacturado extends Base{
     @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "articulo_manufacturado_id")
     private List<DetalleFactura> detalleFacturas = new ArrayList<>();
-
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "articulo_manufacturado_id")
-    private List<DetallePedido> detallePedidos = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "articulo_manufacturado_id")
