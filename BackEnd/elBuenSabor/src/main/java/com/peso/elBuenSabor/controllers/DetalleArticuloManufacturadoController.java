@@ -16,9 +16,4 @@ public class DetalleArticuloManufacturadoController extends BaseControllerImpl<D
     @Autowired
     DetalleArticuloManufacturadoRepository detalleArticuloManufacturadoRepository;
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
-
 }

@@ -32,9 +32,5 @@ public class UsuarioController extends BaseControllerImpl<Usuario, UsuarioServic
     }
 
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
 }
 

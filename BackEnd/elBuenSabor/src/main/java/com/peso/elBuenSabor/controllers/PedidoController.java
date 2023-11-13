@@ -29,10 +29,6 @@ public class PedidoController extends BaseControllerImpl<Pedido, PedidoServiceIm
             return pedidoService.findPedidosBycliente_id(cliente_id);
         }
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
 }
 
 

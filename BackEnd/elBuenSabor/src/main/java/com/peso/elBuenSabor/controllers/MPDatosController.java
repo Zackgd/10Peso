@@ -13,8 +13,5 @@ import java.awt.print.Pageable;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/mpdatos")
 public class MPDatosController extends BaseControllerImpl<MPDatos, MPDatosServiceImpl> {
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
+
 }

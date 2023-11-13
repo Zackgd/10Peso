@@ -67,9 +67,6 @@ public class FacturaController extends BaseControllerImpl<Factura, FacturaServic
         return informe;
     }
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
+
 
 }

@@ -15,9 +15,5 @@ import java.awt.print.Pageable;
 public class DomicilioController extends BaseControllerImpl<Domicilio, DomicilioServiceImpl> {
 
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
 
 }

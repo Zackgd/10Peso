@@ -14,8 +14,5 @@ import java.awt.print.Pageable;
 @RequestMapping(path = "elbuensabor/v1/rubroarticulos")
 public class RubroArticuloController extends BaseControllerImpl<RubroArticulo, RubroArticuloServiceImpl> {
 
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
+
 }

@@ -13,8 +13,5 @@ import java.awt.print.Pageable;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/detallefacturas")
 public class DetalleFacturaController extends BaseControllerImpl<DetalleFactura, DetalleFacturaServiceImpl> {
-    @Override
-    public ResponseEntity<?> getAll(Pageable pageable) {
-        return null;
-    }
+
 }
