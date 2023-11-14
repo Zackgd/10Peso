@@ -35,6 +35,9 @@ public class DetallePedido extends Base{
     @ManyToOne
     private ArticuloManufacturado articuloManufacturado;
 
+    @ManyToOne
+    private Pedido pedido;
+
     @Transient
     public Double getSubtotal() {
         if(this.articuloManufacturado.getPrecioVenta() != null && this.cantidad != null) {

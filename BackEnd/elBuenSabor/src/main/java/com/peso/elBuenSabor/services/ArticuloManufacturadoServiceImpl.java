@@ -5,9 +5,11 @@ import com.peso.elBuenSabor.entities.ArticuloManufacturado;
 import com.peso.elBuenSabor.repositories.ArticuloManufacturadoRepository;
 import com.peso.elBuenSabor.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -55,4 +57,18 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImpl<ArticuloMa
             throw new Exception(e.getMessage());
         }
     }
+    @Override
+    public List<DTORankingProducto> findTopSellingProductsByFecha(@DateTimeFormat(iso = DateTimeFormat.ISO.DATE)Date fechaIn, @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date fechaFin) throws Exception {
+        try {
+            return articuloManufacturadoRepository.findTopSellingProductsByFecha(fechaIn, fechaFin).stream()
+                    .map(row -> new DTORankingProducto(
+                            (Long) row[0],
+                            (String) row[1],
+                            (Long) row[2]))
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+    }
+
 }
