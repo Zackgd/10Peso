@@ -1,4 +1,5 @@
 package com.peso.elBuenSabor.auth;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,6 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AuthResponse {
-    String token;
+public class RegisterRequest {
+    String username;
+    String password;
+    String firstname;
+    String lastname;
+    String country;
 }
