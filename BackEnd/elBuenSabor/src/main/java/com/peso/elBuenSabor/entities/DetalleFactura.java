@@ -27,7 +27,7 @@ public class DetalleFactura extends Base{
     private Integer cantidad;
 
     @NotNull
-    @Column(name = "subtotal", precision = 10, scale = 2)
+    @Column(name = "subtotal")
     private BigDecimal subtotal;
 
 }

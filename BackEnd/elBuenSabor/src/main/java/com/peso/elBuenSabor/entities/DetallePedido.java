@@ -21,15 +21,15 @@ import java.math.BigDecimal;
 public class DetallePedido extends Base{
 
     @NotNull
-    private Integer cantidad;
+    private Long cantidad;
 
     @Transient
     @NotNull
-    @Column(name = "subtotal", precision = 10, scale = 2)
+    @Column(name = "subtotal")
     private Double subtotal;
 
     @NotNull
-    @Column(name = "subtotal_costo", precision = 10, scale = 2)
+    @Column(name = "subtotal_costo")
     private BigDecimal subtotalCosto;
 
     @ManyToOne

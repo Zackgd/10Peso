@@ -1,6 +1,6 @@
 package com.peso.elBuenSabor.controllers;
 
-import com.peso.elBuenSabor.DTOs.RankingProductoYProdDto;
+import com.peso.elBuenSabor.DTOs.DTORankingProducto;
 import com.peso.elBuenSabor.entities.ArticuloManufacturado;
 import com.peso.elBuenSabor.services.ArticuloManufacturadoServiceImpl;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,6 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/articulosmanufacturados")
 public class ArticuloManufacturadoController extends BaseControllerImpl<ArticuloManufacturado, ArticuloManufacturadoServiceImpl> {
-
 
     @GetMapping("/denominacion")
     public ResponseEntity<?> findByDenominacion(@RequestParam String denominacion) {
@@ -35,14 +34,16 @@ public class ArticuloManufacturadoController extends BaseControllerImpl<Articulo
         }
     }
 
-
     @GetMapping("/ranking")
-    public ResponseEntity<?> getTopSellingProducts() {
+    public ResponseEntity<?> findTopSellingProducts() {
         try {
-            List<RankingProductoYProdDto> topSellingProducts = servicio.findTopSellingProducts();
-            return ResponseEntity.ok(topSellingProducts);
+            List<DTORankingProducto> ranking = servicio.findTopSellingProducts();
+            return ResponseEntity.ok(ranking);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"Error\":\"Error, por favor, intente mas tarde\"}");
+
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("{\"Error\":\"Error, por favor, intente mas tarde\"}");
         }
     }
 }

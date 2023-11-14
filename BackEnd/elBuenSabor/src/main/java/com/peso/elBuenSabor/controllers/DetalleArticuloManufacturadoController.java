@@ -13,7 +13,6 @@ import java.awt.print.Pageable;
 @CrossOrigin(origins = "*")
 @RequestMapping(path = "elbuensabor/v1/detalleartmanuf")
 public class DetalleArticuloManufacturadoController extends BaseControllerImpl<DetalleArticuloManufacturado, DetalleArticuloManufacturadoServiceImpl> {
-    @Autowired
-    DetalleArticuloManufacturadoRepository detalleArticuloManufacturadoRepository;
+
 
 }

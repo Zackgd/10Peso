@@ -31,10 +31,10 @@ public class ArticuloManufacturado extends Base{
     private Integer tiempoEstimadoCocina;
 
     @NotNull
-    @Column(name = "precio_venta", precision = 10, scale = 2)
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column(name = "costo", precision = 10, scale = 2)
+    @Column(name = "costo")
     private BigDecimal costo;
 
     @Column(length = 500, name = "url_imagen")

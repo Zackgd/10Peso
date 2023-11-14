@@ -1,17 +1,13 @@
 package com.peso.elBuenSabor.services;
 
-import com.peso.elBuenSabor.DTOs.RankingProductoYProdDto;
+import com.peso.elBuenSabor.DTOs.DTORankingProducto;
 import com.peso.elBuenSabor.entities.ArticuloManufacturado;
-import com.peso.elBuenSabor.entities.DetalleArticuloManufacturado;
 import com.peso.elBuenSabor.repositories.ArticuloManufacturadoRepository;
 import com.peso.elBuenSabor.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -47,13 +43,13 @@ public class ArticuloManufacturadoServiceImpl extends BaseServiceImpl<ArticuloMa
     }
 
     @Override
-    public List<RankingProductoYProdDto> findTopSellingProducts() throws Exception {
+    public List<DTORankingProducto> findTopSellingProducts() throws Exception {
         try {
             return articuloManufacturadoRepository.findTopSellingProducts().stream()
-                    .map(row -> new RankingProductoYProdDto(
+                    .map(row -> new DTORankingProducto(
                     (Long) row[0],
                     (String) row[1],
-                    (Integer) row[2]))
+                    (Long) row[2]))
                     .collect(Collectors.toList());
         } catch (Exception e) {
             throw new Exception(e.getMessage());

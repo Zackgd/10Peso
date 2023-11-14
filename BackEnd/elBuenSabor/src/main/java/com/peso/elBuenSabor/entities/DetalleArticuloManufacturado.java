@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 public class DetalleArticuloManufacturado extends Base{
 
     @NotNull
-    @Column(name = "cantidad", precision = 10, scale = 2)
+    @Column(name = "cantidad")
     private BigDecimal cantidad;
 
     @NotNull

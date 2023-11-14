@@ -24,15 +24,15 @@ public class ArticuloInsumo extends Base{
     private String urlImagen;
 
     @NotNull
-    @Column(name = "precio_compra", precision = 10, scale = 2)
+    @Column(name = "precio_compra")
     private BigDecimal precioCompra;
 
     @NotNull
-    @Column(name = "stock_actual", precision = 10, scale = 2)
+    @Column(name = "stock_actual")
     private BigDecimal stockActual;
 
     @NotNull
-    @Column(name = "stock_minimo", precision = 10, scale = 2)
+    @Column(name = "stock_minimo")
     private BigDecimal stockMinimo;
 
     @NotNull

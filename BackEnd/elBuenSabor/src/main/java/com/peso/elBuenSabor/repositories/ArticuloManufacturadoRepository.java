@@ -17,11 +17,7 @@ import java.util.List;
 @Repository
 public interface ArticuloManufacturadoRepository extends BaseRepository<ArticuloManufacturado, Long> {
 
-
-    @Query("SELECT p.id, p.activo, p.denominacion, p.esBebida, p.imagen, p.nombre, " +
-            "p.precio, p.preparacion, p.stockActual, p.stockMinimo, p.tiempoEstimadoCocina, p.rubro, (SELECT SUM(dp.cantidad) " +
-            "FROM DetallePedido dp WHERE dp.producto = p AND dp.activo = true) " +
-            "AS totalVendido FROM Producto p WHERE p.activo = true ORDER BY totalVendido DESC")
+    @Query("SELECT am.id  , am.nombre , COALESCE(SUM(dp.cantidad ), 0) AS Cantidad_Total FROM ArticuloManufacturado am LEFT JOIN DetallePedido dp on dp.articuloManufacturado.id = am.id  GROUP BY am.id , am.nombre ORDER BY COALESCE(SUM(dp.cantidad), 0) DESC")
     List<Object[]> findTopSellingProducts();
 
     // (Buscar un Articulo Manufacturado segun su denominacion)

@@ -32,11 +32,11 @@ public class Pedido extends Base {
 
     @Transient
     @NotNull
-    @Column(name = "total", precision = 10, scale = 2)
+    @Column(name = "total")
     private BigDecimal total;
 
     @NotNull
-    @Column(name = "total_costo", precision = 10, scale = 2)
+    @Column(name = "total_costo")
     private BigDecimal totalCosto;
 
     @NotNull

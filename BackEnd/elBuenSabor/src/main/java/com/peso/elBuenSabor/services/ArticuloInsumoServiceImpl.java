@@ -1,15 +1,10 @@
 package com.peso.elBuenSabor.services;
 
-import com.peso.elBuenSabor.DTOs.RankingProductoYProdDto;
 import com.peso.elBuenSabor.entities.ArticuloInsumo;
-import com.peso.elBuenSabor.entities.ArticuloManufacturado;
 import com.peso.elBuenSabor.repositories.ArticuloInsumoRepository;
 import com.peso.elBuenSabor.repositories.BaseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class ArticuloInsumoServiceImpl extends BaseServiceImpl<ArticuloInsumo, Long> implements ArticuloInsumoService {
