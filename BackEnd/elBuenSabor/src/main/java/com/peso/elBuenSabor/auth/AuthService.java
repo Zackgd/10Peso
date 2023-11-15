@@ -1,9 +1,9 @@
 package com.peso.elBuenSabor.auth;
 
 import com.peso.elBuenSabor.JWT.JwtService;
-import com.peso.elBuenSabor.User.Role;
-import com.peso.elBuenSabor.User.User;
-import com.peso.elBuenSabor.User.UserRepository;
+import com.peso.elBuenSabor.enums.Role;
+import com.peso.elBuenSabor.entities.User;
+import com.peso.elBuenSabor.repositories.UserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;

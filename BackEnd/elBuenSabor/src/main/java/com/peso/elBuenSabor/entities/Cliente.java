@@ -36,8 +36,8 @@ public class Cliente extends Base{
     private Date fechaBaja;
 
     @OneToOne
-    @JoinColumn(name = "usuario_id")
-    private Usuario usuario;
+    @JoinColumn(name = "user_id")
+    private User user;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @JoinColumn(name = "cliente_id")
