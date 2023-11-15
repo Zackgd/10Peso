@@ -1,9 +1,10 @@
-package com.peso.elBuenSabor.User;
+package com.peso.elBuenSabor.entities;
 
 
 import java.util.Collection;
 import java.util.List;
 
+import com.peso.elBuenSabor.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,10 +29,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name="user", uniqueConstraints = {@UniqueConstraint(columnNames = {"username"})})
-public class User implements UserDetails {
-    @Id
-    @GeneratedValue
-    Integer id;
+public class User extends Base implements UserDetails{
+
     @Basic
     @Column(nullable = false)
     String username;

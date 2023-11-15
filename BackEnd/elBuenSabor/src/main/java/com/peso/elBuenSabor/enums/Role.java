@@ -1,4 +1,4 @@
-package com.peso.elBuenSabor.User;
+package com.peso.elBuenSabor.enums;
 
 public enum Role {
     ADMIN,
