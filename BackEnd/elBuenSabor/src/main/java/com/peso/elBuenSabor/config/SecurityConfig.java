@@ -15,6 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -32,6 +33,7 @@ public class SecurityConfig {
                                 authRequest
                                         //Autenticacion
                                         .requestMatchers(new AntPathRequestMatcher("/auth/**")).permitAll()
+                                        .requestMatchers(new AntPathRequestMatcher("/elbuensabor/**")).permitAll()
 
                                         //Consola H2:
                                         .requestMatchers(PathRequest.toH2Console()).permitAll()
@@ -39,7 +41,7 @@ public class SecurityConfig {
                                         //Autorizacion de acceso a la url:
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/demoAdmin/**")).hasAuthority("ADMIN")
                                         .requestMatchers(new AntPathRequestMatcher("/api/v1/demoUser/**")).hasAuthority("USER")
-
+                                        .requestMatchers(new AntPathRequestMatcher("/elbuensabor/v1/articulosmanufacturados")).hasAuthority("ADMIN")
 
                 )
                 .headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //H2
@@ -51,7 +53,7 @@ public class SecurityConfig {
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
 
+    }
 
     }
 
-}
