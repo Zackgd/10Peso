@@ -1,0 +1,99 @@
+.articulo-abm-container {
+  padding: 15px;
+ 
+  
+  flex-direction: row;
+ 
+  background-color: #fbd2a9;
+  border-radius: 8%;
+  }
+  
+  .articulo-form-container {
+    padding: 15px;
+  width: 550px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFDECD;
+  border-radius: 8%;
+  }
+  
+  .button-group {
+    padding: 10px;
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 16px;
+  }
+  
+  .articulo-list-container ul {
+    padding: 10px;
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 16px;
+  }
+  
+  .articulo-list-container li {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .articulo-list-container li:hover {
+    background-color: #eee;
+    padding: 10px;
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 16px;
+  }
+  
+  .articulo-list-container li.selected {
+    background-color: #aaf;
+    padding: 10px;
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 16px;
+  }
+ 
+
+
+
+/*Formulario*/
+.formLogin{
+  padding: 15px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFDECD;
+  border-radius: 8%;
+}
+.formRegistro{
+  padding: 15px;
+  width: 550px;
+  height: 590px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFDECD;
+  border-radius: 8%;
+}
+/*INPUTS*/
+.inputInsumo{
+  padding: 10px;
+  height: 35px;
+  width: 300px;
+  border: none;
+  border-radius: 16px;
+}
