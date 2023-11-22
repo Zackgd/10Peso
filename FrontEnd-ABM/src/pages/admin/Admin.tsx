@@ -4,6 +4,8 @@ import Spinner from "react-bootstrap/Spinner";
 import ArticuloInsumoABM from "./components/ArticuloInsumo/ArticuloInsumoABM";
 import ArticuloManufacturadoABM from "./components/ArticuloManufacturado/ArticuloManufacturadoABM";
 import useProducts from "./hooks/useProducts";
+import ArticuloManufacturadoTable from "./components/ArticuloManufacturado/ArticuloManufactuadoTable";
+import ArticuloInsumoTable from "./components/ArticuloInsumo/ArticuloInsumoTable";
 
 const ProductsTable = React.lazy(() => import('./components/AbmFactura/FacturaTable'));
 
@@ -29,8 +31,8 @@ const Admin: React.FC = () => {
     : (
       <React.Suspense fallback={<Spinner animation="border" />}>
         {/* <ProductsTable products={data} /> */}
-        <ArticuloManufacturadoABM/>
-      <ArticuloInsumoABM/>
+        <ArticuloManufacturadoTable/>
+        <ArticuloInsumoTable/>
       </React.Suspense>
     )
 };
