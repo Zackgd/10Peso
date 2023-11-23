@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
-import { PencilFill, ArrowUp, ArrowDown } from 'react-bootstrap-icons';
-import { ArticuloManufacturado } from "./../../../../types/ArtuculoManufacturado";
+import { PencilFill, ArrowUp, ArrowDown, Trash } from 'react-bootstrap-icons';
+import { ArticuloManufacturado } from "../../../../types/ArtuculoManufacturado";
 import { ModalType } from "../../../../types/ModalType";
 import ArticuloManufacturadoModal from "./ArticuloManufacturadoModal";
 import { ArticuloManufacturadoService } from "../../../../services/ArticuloManufacturadoService";
@@ -29,6 +29,18 @@ const ArticuloManufacturadoTable = () => {
     setModalType(modal)
     setSelectedArticulo(articulo);
     setShowModal(true);
+  };
+
+  const handleDelete = async (newTitle: string, articulo: ArticuloManufacturado, modal: ModalType) => {
+    try {
+      setTitle(newTitle);
+      setModalType(modal);
+      setSelectedArticulo(articulo);
+      setShowModal(true);
+    } catch (error) {
+      console.error("Error al eliminar artículo:", error);
+      toast.error("Error al eliminar artículo");
+    }
   };
 
   return (
@@ -65,6 +77,9 @@ const ArticuloManufacturadoTable = () => {
               <td>
                 <Button variant="light" onClick={() => handleClick("Editar Articulo Manufacturado", articulo, ModalType.UPDATE)}>
                   <PencilFill color='orange' />
+                </Button>
+                <Button variant="light" onClick={() => handleDelete("Eliminar Articulo Manufacturado", articulo, ModalType.DELETE)}>
+                  <Trash color='red' />
                 </Button>
               </td>
             </tr>

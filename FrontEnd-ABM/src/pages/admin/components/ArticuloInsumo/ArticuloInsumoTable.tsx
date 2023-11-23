@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Table } from "react-bootstrap";
-import { PencilFill, ArrowUp, ArrowDown } from 'react-bootstrap-icons';
+import { PencilFill, ArrowUp, ArrowDown, Trash } from 'react-bootstrap-icons';
 import { ArticuloInsumo } from "../../../../types/ArticuloInsumo";
 import { ModalType } from "../../../../types/ModalType";
 import ArticuloInsumoModal from "./ArticuloInsumoModal";
@@ -31,6 +31,17 @@ const ArticuloInsumoTable = () => {
     setShowModal(true);
   };
 
+  const handleDelete = async (newTitle: string, articulo: ArticuloInsumo, modal: ModalType) => {
+    try {
+      setTitle(newTitle);
+      setModalType(modal);
+      setSelectedArticulo(articulo);
+      setShowModal(true);
+    } catch (error) {
+      console.error("Error al eliminar artículo:", error);
+      toast.error("Error al eliminar artículo");
+    }
+  };
   return (
     <div className="m-3">
       <Button onClick={() => handleClick("Nuevo Articulo Insumo", {
@@ -68,6 +79,9 @@ const ArticuloInsumoTable = () => {
               <td>
                 <Button variant="light" onClick={() => handleClick("Editar Articulo Insumo", articulo, ModalType.UPDATE)}>
                   <PencilFill color='orange' />
+                </Button>
+                <Button variant="light" onClick={() => handleDelete("Eliminar Articulo Insumo", articulo, ModalType.DELETE)}>
+                  <Trash color='red' />
                 </Button>
               </td>
             </tr>

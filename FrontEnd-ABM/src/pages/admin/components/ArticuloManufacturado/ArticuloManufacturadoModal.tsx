@@ -1,7 +1,6 @@
-// ArticuloManufacturadoModal.jsx
 import { Button, Form, Modal } from "react-bootstrap";
 import { useFormik } from "formik";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import { ArticuloManufacturado } from "./../../../../types/ArtuculoManufacturado";
 import { ModalType } from "../../../../types/ModalType";
 import { ArticuloManufacturadoService } from "../../../../services/ArticuloManufacturadoService";
@@ -36,21 +35,46 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
       if (modalType === ModalType.CREATE) {
         await ArticuloManufacturadoService.addArticulo(formData);
       } else if (modalType === ModalType.UPDATE) {
-        await ArticuloManufacturadoService.updateArticulo(formData.id, formData);
+        await ArticuloManufacturadoService.updateArticulo(
+          formData.id,
+          formData
+        );
+      } else if (modalType === ModalType.DELETE) {
+        handleDelete();
+        return;
       }
 
-      toast.success(modalType === ModalType.CREATE ? "Articulo Manufacturado Creado" : "Articulo Manufacturado Actualizado", {
-        position: "top-center",
-      });
+      toast.success(
+        modalType === ModalType.CREATE
+          ? "Articulo Manufacturado Creado"
+          : "Articulo Manufacturado Actualizado",
+        {
+          position: "top-center",
+        }
+      );
 
       onHide();
-      refreshData(prevState => !prevState);
+      refreshData((prevState) => !prevState);
     } catch (error) {
       console.error("Error saving Articulo Manufacturado:", error);
-      toast.error('Ha ocurrido un error');
+      toast.error("Ha ocurrido un error");
     }
   };
-
+  const handleDelete = async () => {
+    try {
+      if (articulo.id) {
+        await ArticuloManufacturadoService.deleteArticulo(articulo.id);
+        toast.success("Artículo eliminado con éxito", {
+          position: "top-center",
+        });
+        onHide();
+        refreshData((prevState) => !prevState);
+      }
+    } catch (error) {
+      console.error("Error al eliminar artículo:", error);
+      toast.error("Error al eliminar artículo");
+    }
+  };
   return (
     <Modal show={show} onHide={onHide} centered backdrop="static">
       <Modal.Header closeButton>
@@ -63,7 +87,7 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
             <Form.Control
               name="nombre"
               type="text"
-              value={formik.values.nombre || ''}
+              value={formik.values.nombre || ""}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               isInvalid={Boolean(formik.errors.nombre && formik.touched.nombre)}
@@ -79,10 +103,12 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
               name="descripcion"
               as="textarea"
               rows={3}
-              value={formik.values.descripcion || ''}
+              value={formik.values.descripcion || ""}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              isInvalid={Boolean(formik.errors.descripcion && formik.touched.descripcion)}
+              isInvalid={Boolean(
+                formik.errors.descripcion && formik.touched.descripcion
+              )}
             />
             <Form.Control.Feedback type="invalid">
               {formik.errors.descripcion}
@@ -94,10 +120,12 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
             <Form.Control
               name="precioVenta"
               type="number"
-              value={formik.values.precioVenta || ''}
+              value={formik.values.precioVenta || ""}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              isInvalid={Boolean(formik.errors.precioVenta && formik.touched.precioVenta)}
+              isInvalid={Boolean(
+                formik.errors.precioVenta && formik.touched.precioVenta
+              )}
             />
             <Form.Control.Feedback type="invalid">
               {formik.errors.precioVenta}
@@ -109,10 +137,13 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
             <Form.Control
               name="tiempoEstimadoCocina"
               type="number"
-              value={formik.values.tiempoEstimadoCocina || ''}
+              value={formik.values.tiempoEstimadoCocina || ""}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              isInvalid={Boolean(formik.errors.tiempoEstimadoCocina && formik.touched.tiempoEstimadoCocina)}
+              isInvalid={Boolean(
+                formik.errors.tiempoEstimadoCocina &&
+                  formik.touched.tiempoEstimadoCocina
+              )}
             />
             <Form.Control.Feedback type="invalid">
               {formik.errors.tiempoEstimadoCocina}
@@ -126,6 +157,11 @@ const ArticuloManufacturadoModal: React.FC<ArticuloManufacturadoModalProps> = ({
             <Button variant="primary" type="submit" disabled={!formik.isValid}>
               Guardar
             </Button>
+            {modalType === ModalType.DELETE && (
+              <Button variant="danger" onClick={handleDelete}>
+                Eliminar
+              </Button>
+            )}
           </Modal.Footer>
         </Form>
       </Modal.Body>
